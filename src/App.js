@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import MemberCard from './components/Card';
 import Form from './components/Form';
 import './App.css';
 
 function App() {
-   const [members, setMembers] = useState([])
-      
+   const [member, setMember] = useState([
+   {
+     id: (1),
+     name: "Justin",
+     email: 'jkuenzinger228@gmail.com',
+     role: 'web developer in training'
+   }
+   ]);
+   
    const addNewMember = e => {
       const newMember = {
         id: Date.now(),
@@ -14,7 +20,7 @@ function App() {
         email: e.email,
         role: e.role
       };
-      setMember([...members, newMember]); 
+      setMember([...member, newMember]); 
    };
    
  return (
@@ -24,8 +30,7 @@ function App() {
         <p>
            <code>
             <Form addNewMember={addNewMember} />
-            <MemberCard member={member} />
-            </code> and save to reload.
+           </code> 
         </p>
         <a
           className="App-link"
