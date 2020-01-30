@@ -4,9 +4,9 @@ import Form from './components/Form';
 import './App.css';
 
 function App() {
-   const [member, setMember] = useState([
+   const [members, setMembers] = useState([
    {
-     id: (1),
+     id: 1,
      name: "Justin",
      email: 'jkuenzinger228@gmail.com',
      role: 'web developer in training'
@@ -20,7 +20,7 @@ function App() {
         email: e.email,
         role: e.role
       };
-      setMember([...member, newMember]); 
+      setMembers([...members, newMember]); 
    };
    
  return (
