@@ -8,7 +8,8 @@ const Form = props => {
     });
     
     const handleChanges = e => {
-        setMember({ ...member,[e.taget.name]: e.target.value });
+        setMember({ ...member, [e.taget.name]: e.target.value});
+        console.log(Form);
     };
 
     const submitForm = e => {
@@ -22,17 +23,23 @@ const Form = props => {
     }
     return(
        <form onSubmit={submitForm}>
+           <div>
            <label htmlFor='name'>Name:</label>
-           <input id='name' type='text' name='name' onChange={handleChanges} value={member.name} placeholder='Name'/>
+           <input id='name' type='text' name='name' onChange={handleChanges} value={member.name}/>
+           </div>
+           <div>
            <label htmlFor='email'>Email:</label>
-           <input id='email' type='email' email='email' onChange={handleChanges} value={member.email} placeholder='Email'/>
+           <input id='email' type='email' name='email' onChange={handleChanges} value={member.email} />
+           </div>
+           <div>
            <label htmlFor='role'>Role:</label>
-           <input id='role' type='text' role='role' onChange={handleChanges} value={member.role} placeholder='Role'/>
+           <input id='role' type='text' name='role' onChange={handleChanges} value={member.role} />
+           </div>
            <div>
            <button type='submit'>Submit</button>
            </div>
         </form>
-    )
+    );
 };
 
 export default Form
